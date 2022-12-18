@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/members")
+@CrossOrigin("*")
 public class MemberController {
     private final MemberService memberService;
 
