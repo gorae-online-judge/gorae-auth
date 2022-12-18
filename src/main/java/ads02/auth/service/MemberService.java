@@ -40,7 +40,7 @@ public class MemberService {
                 .orElseThrow(() -> new GoraeException("해당하는 아이디의 유저가 없습니다."));
         if (!passwordEncoder.matches(loginReq.getPassword(), member.getPassword()))
             throw new GoraeException("비밀번호가 일치하지 않습니다.");
-        return jwtService.createJwt(member.getId(), member.getBojToken());
+        return jwtService.createJwt(member.getNickname(), member.getBojToken());
     }
 
     public boolean nicknameExists(String nickname) {

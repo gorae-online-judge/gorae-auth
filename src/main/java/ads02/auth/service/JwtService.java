@@ -26,11 +26,11 @@ public class JwtService {
         this.accessKey = Keys.hmacShaKeyFor(JWT_ACCESS_SECRET_KEY.getBytes());
     }
 
-    public String createJwt(long memberId, String bojToken){
+    public String createJwt(String nickname, String bojToken){
         Date now = new Date();
         return Jwts.builder()
                 .setHeaderParam("type", "jwt")
-                .claim("id", memberId)
+                .claim("id", nickname)
                 .claim("bojToken", bojToken)
                 .setIssuedAt(now)
                 .setExpiration(new Date(now.getTime() + JWT_ACCESS_TOKEN_TIME))
