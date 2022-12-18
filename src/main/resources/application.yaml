@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gorae-auth-service
+    name: auth-service
 
 server:
   port: 6000
