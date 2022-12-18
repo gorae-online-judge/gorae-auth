@@ -42,4 +42,8 @@ public class MemberService {
             throw new GoraeException("비밀번호가 일치하지 않습니다.");
         return jwtService.createJwt(member.getId(), member.getBojToken());
     }
+
+    public boolean nicknameExists(String nickname) {
+        return memberRepository.findByNicknameEquals(nickname).isPresent();
+    }
 }
